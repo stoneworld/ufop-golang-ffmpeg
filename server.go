@@ -20,7 +20,7 @@ type Ret struct {
 }
 
 func getTheMuteTime(url string) (muteTime float64, integratedLoudness float64, err error) {
-	cmdArguments := []string{"-i",url, "-filter_complex", "ebur128", "-c:v", "copy", "-t","10", "-f", "null", "/dev/null"}
+	cmdArguments := []string{"-i",url, "-filter_complex", "ebur128", "-c:v", "copy", "-f", "null", "/dev/null"}
 	command := exec.Command("ffmpeg", cmdArguments...)
 	var out bytes.Buffer
 	var errOut bytes.Buffer
